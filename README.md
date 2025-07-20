@@ -94,6 +94,6 @@ We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkag
 
 ---
 
-This project was developed as part of the Artificial Intelligence course at the Faculty of Electrical Engineering, University of Sarajevo, by [Lamija Gutić](https://github.com/lamijagutic), [Dženeta Milić])https://github.com/dmilic1), and [Fatima Kaljanac](https://github.com/amit24af).
+This project was developed as part of the Artificial Intelligence course at the Faculty of Electrical Engineering, University of Sarajevo, by [Lamija Gutić](https://github.com/lamijagutic), [Dženeta Milić](https://github.com/dmilic1), and [Fatima Kaljanac](https://github.com/amit24af).
 
 
