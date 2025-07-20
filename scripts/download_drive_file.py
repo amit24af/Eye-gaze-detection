@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 import io
 from googleapiclient.http import MediaIoBaseDownload
 
-SERVICE_ACCOUNT_INFO = os.environ.get('GDRIVE_SERVICE_ACCOUNT')
+SERVICE_ACCOUNT_INFO = os.environ.get('SERVICE_ACCOUNT_INFO')
 
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
 
@@ -25,6 +25,9 @@ def download_file(service, file_id, output_file):
         print(f"Downloading {output_file}: {int(status.progress() * 100)}%")
 
 def main():
+    if SERVICE_ACCOUNT_INFO is None:
+        raise Exception("Environment variable SERVICE_ACCOUNT_INFO is not set!")
+
     service_account_info = json.loads(SERVICE_ACCOUNT_INFO)
     creds = service_account.Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
     service = build('drive', 'v3', credentials=creds)
