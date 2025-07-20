@@ -4,7 +4,7 @@ In this project, gaze-based signals were used to distinguish between typically d
 ---
 
 # 📊 Dataset
-We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkaggleteam/eye-tracking-autism) dataset from Kaggle, consisting of:
+We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkaggleteam/eye-tracking-autism) from Kaggle, consisting of:
 25 CSV files containing eye-tracking time-series data from 59 participants
 Metadata file with participant age, gender, group label (TD/ASD), and CARS scores
 Features include pupil diameter, gaze coordinates, tracking ratio, AOIs, and more
