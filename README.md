@@ -5,12 +5,17 @@ In this project, gaze-based signals were used to distinguish between typically d
 
 # 📊 Dataset
 We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkaggleteam/eye-tracking-autism) from Kaggle, consisting of:
-25 CSV files containing eye-tracking time-series data from 59 participants
-Metadata file with participant age, gender, group label (TD/ASD), and CARS scores
-Features include pupil diameter, gaze coordinates, tracking ratio, AOIs, and more
-✅ Balanced: ~50% ASD / 50% TD
-✅ Age range: 2.7 – 12.9 years
-✅ Data preprocessed: cleaned, normalized, aggregated, standardized
+
+- 🗂️ **25 CSV files** containing eye-tracking time-series data from 59 participants  
+- 📄 **Metadata file** with participant age, gender, group label (TD or ASD), and CARS scores  
+- 🎯 **Features** include:
+  - Pupil diameter (left/right)
+  - Gaze coordinates (x, y)
+  - Tracking ratio
+  - Areas of Interest (AOIs), fixation points, timestamps
+Balanced: ~50% ASD / 50% TD  
+Age range: 2.7 – 12.9 years  
+Data preprocessed: cleaned, normalized, aggregated, standardized
 
 ---
 
