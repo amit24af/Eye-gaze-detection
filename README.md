@@ -78,7 +78,7 @@ We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkag
 - Models tested and compared across different paradigms
 
 **Limitations:**
-- Small sample size (n = 59)
+- Small sample size
 - Some missing gaze data and tracking noise
 - Dataset only covers children in a narrow age range
 
