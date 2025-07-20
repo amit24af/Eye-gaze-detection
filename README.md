@@ -89,7 +89,7 @@ We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkag
 - Expand dataset (more participants, diverse age/gender groups)
 - Incorporate multimodal features (audio, facial expressions)
 - Combine CNN and LSTM in hybrid models
-- Improve interpretability with SHAP or LIME
+- Improve interpretability with SHAP or LIME 
 - Real-time optimized deployment for clinical screening
 
 ---
