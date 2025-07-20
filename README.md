@@ -1,6 +1,8 @@
 # Eye gaze detection
 In this project, gaze-based signals were used to distinguish between typically developing (TD) children and those with ASD. The goal was to build robust classification models capable of supporting early diagnosis.
 
+---
+
 # 📊 Dataset
 We used the “Eye Tracking Autism” dataset from Kaggle, consisting of:
 25 CSV files containing eye-tracking time-series data from 59 participants
