@@ -23,21 +23,36 @@ Features include pupil diameter, gaze coordinates, tracking ratio, AOIs, and mor
 
 | Model | Description |
 |-------|-------------|
-| **LSTM + Attention** | Bidirectional LSTM with memory and focus on relevant gaze segments |
-| **1D CNN** | Applies convolution over time-series segments |
-| **Random Forest** | Works on aggregated statistical features; interpretable |
-| **MLP** | Fully connected layers using aggregated gaze stats |
+| **LSTM + Attention** | Sequence model with Bidirectional LSTM layers followed by an Attention mechanism. Trained on time-series windows to capture temporal dynamics in gaze behavior. Achieved the highest AUC. |
+| **1D CNN** | Convolutional model using 1D kernels to scan over time steps. Designed to detect local temporal patterns in gaze movements. Lighter than LSTM and faster to train. |
+| **Random Forest (Simple)** | Classic ensemble of decision trees trained on statistical (aggregated) features. Quick to train and interpretable, but showed signs of underfitting. |
+| **Random Forest (Tuned)** | GridSearchCV-optimized version of Random Forest with max depth and number of estimators tuned. Slight improvement over basic RF, but still inferior to neural models. |
+| **Multilayer Perceptron (MLP)** | Fully connected neural network with two hidden layers, trained on statistical features. Lightweight and easy to implement, but lacks sequential modeling capabilities. |
+
+---
+## 🔧 Model Configuration Details
+
+| Model | Architecture | Activation Functions | Batch Size | Epochs | Notes |
+|-------|--------------|----------------------|------------|--------|-------|
+| **LSTM + Attention** | 2× Bidirectional LSTM → Attention → Dense(1) | `tanh`, `sigmoid` | 16 | 100 | Attention highlights important time steps; high AUC |
+| **1D CNN** | Conv1D → MaxPooling1D → Flatten → Dense(1) | `relu`, `sigmoid` | 32 | 100 | Fast training; good for short-term sequence patterns |
+| **Random Forest (Simple)** | 100 trees (default params) | — | — | — | Basic version, lower performance |
+| **Random Forest (Tuned)** | `n_estimators=200`, `max_depth=8` | — | — | — | Tuned via GridSearchCV; slight improvement |
+| **MLP** | Dense(100) → Dropout(0.3) → Dense(50) → Dense(1) | `relu`, `sigmoid` | 32 | 100 | Lightweight; trained on aggregated gaze features |
+
 
 ---
 
 ## ✅ Evaluation Summary
 
-| Model | Accuracy | Precision (ASD) | Recall (ASD) | AUC |
-|-------|----------|-----------------|--------------|-----|
-| **LSTM + Attention** | 81.3% | 73% | 77% | 0.894 |
-| **1D CNN** | 82.6% | 73.9% | 74.8% | — |
-| **Random Forest (Tuned)** | 70.0% | 72% | 55% | — |
-| **MLP** | 71.6% | 74% | 57% | — |
+| Model | Accuracy | Precision (ASD) | Recall (ASD) | F1-score (ASD) | AUC |
+|-------|----------|-----------------|--------------|----------------|-----|
+| **LSTM + Attention** | 81.3% | 73% | 77% | 75% | **0.894** |
+| **1D CNN** | **82.6%** | 73.9% | 74.8% | 74.3% | — |
+| **Random Forest (Simple)** | 66.0% | 71% | 50% | 58.3% | — |
+| **Random Forest (Tuned)** | 70.0% | 72% | 55% | 62.4% | — |
+| **Multilayer Perceptron (MLP)** | 71.6% | 74% | 57% | 64.4% | — |
+
 
 ---
 
