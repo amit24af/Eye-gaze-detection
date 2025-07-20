@@ -13,9 +13,9 @@ We used the [Eye Tracking Autism dataset](https://www.kaggle.com/datasets/imtkag
   - Gaze coordinates (x, y)
   - Tracking ratio
   - Areas of Interest (AOIs), fixation points, timestamps
-Balanced: ~50% ASD / 50% TD  
-Age range: 2.7 – 12.9 years  
-Data preprocessed: cleaned, normalized, aggregated, standardized
+- Balanced: ~50% ASD / 50% TD  
+- Age range: 2.7 – 12.9 years  
+- Data preprocessed: cleaned, normalized, aggregated, standardized
 
 ---
 
